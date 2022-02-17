@@ -6,7 +6,6 @@ import model.dao.SellerDao;
 import model.entities.Department;
 import model.entities.Seller;
 
-import javax.swing.plaf.nimbus.State;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -25,7 +24,7 @@ public class SellerDaoJDBC implements SellerDao {
     public void insert(Seller obj) {
         PreparedStatement st = null;
         try {
-            st = conn.prepareStatement("" +
+            st = conn.prepareStatement(
                     "insert into seller " +
                     "(Name, Email, BirthDate, BaseSalary, DepartmentId) " +
                     "values " +
@@ -152,7 +151,7 @@ public class SellerDaoJDBC implements SellerDao {
     }
 
     @Override
-    public List<Seller> findAll() {
+    public List<Seller> findAll(){
         PreparedStatement st = null;
         ResultSet rs = null;
 
